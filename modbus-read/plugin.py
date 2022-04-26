@@ -173,6 +173,8 @@
 import Domoticz
 import sys
 import pymodbus
+import time
+import random
 
 from pymodbus.client.sync import ModbusSerialClient # RTU
 from pymodbus.client.sync import ModbusTcpClient    # RTU over TCP
@@ -324,6 +326,7 @@ class BasePlugin:
         Domoticz.Log("onDisconnect called")
 
     def onHeartbeat(self):
+	time.sleep(random.random()*5)
         Domoticz.Log("onHeartbeat called")
 
         ########################################
